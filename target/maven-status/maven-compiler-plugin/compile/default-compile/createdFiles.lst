@@ -1,0 +1,16 @@
+com/maternelle/ecole_maternelle/Services/PresenceService.class
+com/maternelle/ecole_maternelle/Entities/Absence.class
+com/maternelle/ecole_maternelle/Entities/Enfant.class
+com/maternelle/ecole_maternelle/Entities/Classe.class
+com/maternelle/ecole_maternelle/resources/JakartaEE10Resource.class
+com/maternelle/ecole_maternelle/Rest/ParentResource.class
+com/maternelle/ecole_maternelle/Entities/Presence.class
+com/maternelle/ecole_maternelle/Rest/PresenceResource.class
+com/maternelle/ecole_maternelle/JakartaRestConfiguration.class
+com/maternelle/ecole_maternelle/Filters/CorsFilter.class
+com/maternelle/ecole_maternelle/Services/ParentService.class
+com/maternelle/ecole_maternelle/Rest/EnfantResource.class
+com/maternelle/ecole_maternelle/Bean/EnfantBean.class
+com/maternelle/ecole_maternelle/Services/EnfantService.class
+com/maternelle/ecole_maternelle/Entities/Parent.class
+com/maternelle/ecole_maternelle/Rest/PresenceResourceTest.class

@@ -1,0 +1,16 @@
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/Rest/PresenceResourceTest.java
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/Filters/CorsFilter.java
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/Entities/Presence.java
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/Entities/Enfant.java
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/Rest/EnfantResource.java
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/Services/PresenceService.java
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/resources/JakartaEE10Resource.java
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/Rest/ParentResource.java
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/JakartaRestConfiguration.java
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/Bean/EnfantBean.java
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/Entities/Parent.java
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/Services/EnfantService.java
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/Entities/Absence.java
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/Entities/Classe.java
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/Services/ParentService.java
+/home/mechack-kasongo/glassfish7/ecole_maternelle/src/main/java/com/maternelle/ecole_maternelle/Rest/PresenceResource.java

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" 
+             xmlns="https://jakarta.ee/xml/ns/persistence" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+    
+    <persistence-unit name="ecolePU" transaction-type="JTA">
+        <!-- Nom de la source de données JTA configurée dans le serveur d'applications -->
+        <jta-data-source>jdbc/ecole_maternelle</jta-data-source>
+        
+        <properties>
+            <!-- Si vous utilisez une connexion JTA, cette section peut être omise -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:derby:ecole_maternelle;create=true"/>
+            <property name="jakarta.persistence.jdbc.user" value="admin"/>
+            <property name="jakarta.persistence.jdbc.password" value="TEST"/>
+            
+            <!-- Configuration de la génération de schéma -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="update"/>
+            <property name="jakarta.persistence.logging.level" value="FINE"/>
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="https://jakarta.ee/xml/ns/jakartaee"
+      xmlns:h="jakarta.faces.html">
+    <h:head>
+        <title>Accueil</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <style>
+            body {
+                background-color: #f8f9fa; /* Couleur de fond légère */
+            }
+            .container {
+                margin-top: 100px; /* Espace supérieur */
+                text-align: center; /* Centre le texte */
+            }
+            .btn-custom {
+                margin: 10px; /* Marge autour des boutons */
+                width: 250px; /* Largeur des boutons */
+            }
+            .custom-title {
+                font-size: 2rem; /* Taille de police réduite */
+            }
+        </style>
+    </h:head>
+    <h:body class="container d-flex flex-column align-items-center">
+        <h4 class="custom-title">Bienvenue sur l'application de gestion des enfants</h4>
+        <div>
+            <a href="pages/enfant.xhtml" class="btn btn-success btn-custom">Voir la liste des enfants</a>
+            <a href="pages/ajouterEnfant.xhtml" class="btn btn-primary btn-custom">Ajouter un enfant</a>
+        </div>
+    </h:body>
+</html>
