@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+    <h:head>
+        <title>Gestion de la présence des enfants</title>
+        <!-- Liens vers Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <!-- Liens vers jQuery et Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </h:head>
+    <h:body>
+<h:form>
+    <div class="container">
+        <h2 class="font-weight-bold mb-4">Gestion de la présence des enfants</h2>
+        
+        <div class="form-group">
+            <h:outputLabel for="classe" value="Sélectionner une classe : " />
+            <h:selectOneMenu id="classe" value="#{presenceBean.selectedClasse}" class="form-control">
+                <f:selectItem itemLabel="-- Sélectionner --" itemValue="" />
+                <f:selectItems value="#{presenceBean.listeClasses}" var="classe" itemValue="#{classe}" itemLabel="#{classe.nom}" />
+                <f:ajax event="change" listener="#{presenceBean.loadEnfants}" render="enfantsPanel" />
+            </h:selectOneMenu>
+        </div>
+
+        <h:panelGroup id="enfantsPanel">
+            <h:dataTable value="#{presenceBean.listeEnfants}" var="enfant" class="table table-bordered">
+                <h:column>
+                    <f:facet name="header">Nom</f:facet>
+                    #{enfant.nom}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Prénom</f:facet>
+                    #{enfant.prenom}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Présence</f:facet>
+                    <h:selectBooleanCheckbox value="#{presenceBean.presenceMap[enfant.id]}" />
+                </h:column>
+            </h:dataTable>
+        </h:panelGroup>
+
+        <h:commandButton value="Enregistrer la présence" action="#{presenceBean.marquerPresence}" class="btn btn-primary mt-3" />
+    </div>
+</h:form>
+
+    </h:body>
+</html>

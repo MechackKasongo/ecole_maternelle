@@ -1,6 +1,7 @@
 
 package com.maternelle.ecole_maternelle.Entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,7 +10,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import java.sql.Date;
 import java.sql.Time;
-import java.sql.Timestamp;
+//import java.sql.Timestamp;
 
 /**
  *
@@ -20,16 +21,36 @@ public class Presence {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private Date datePresence;
-    private Time heureEntree;
-    private Time heureSortie;
-    private Timestamp dateCreation;
-
+    
     @ManyToOne
-    @JoinColumn(name = "enfant_id", nullable = false)
+    @JoinColumn(name = "ENFANT_ID", nullable = false)
     private Enfant enfant;
     
-    // Getter et Setter pour 'id'
+
+    @Column(name = "DATE_PRESENCE")
+    private Date datePresence;
+    
+    @Column(name = "HEURE_ENTREE")
+    private Time heureEntree;
+    
+    @Column(name = "HEURE_SORTIE")
+    private Time heureSortie;
+    
+    @Column(name = "DATE_CREATION")
+    private Date dateCreation;
+    
+    
+    @Column(name = "PRESENT")
+    private Boolean present;
+    
+
+    
+    // Constructeur par défaut obligatoire pour JPA
+    public Presence() {
+    }
+    
+        // Getters et Setters
+
     public int getId() {
         return id;
     }
@@ -38,7 +59,14 @@ public class Presence {
         this.id = id;
     }
 
-    // Getter et Setter pour 'datePresence'
+    public Enfant getEnfant() {
+        return enfant;
+    }
+
+    public void setEnfant(Enfant enfant) {
+        this.enfant = enfant;
+    }
+
     public Date getDatePresence() {
         return datePresence;
     }
@@ -47,7 +75,6 @@ public class Presence {
         this.datePresence = datePresence;
     }
 
-    // Getter et Setter pour 'heureEntree'
     public Time getHeureEntree() {
         return heureEntree;
     }
@@ -56,7 +83,6 @@ public class Presence {
         this.heureEntree = heureEntree;
     }
 
-    // Getter et Setter pour 'heureSortie'
     public Time getHeureSortie() {
         return heureSortie;
     }
@@ -65,21 +91,38 @@ public class Presence {
         this.heureSortie = heureSortie;
     }
 
-    // Getter et Setter pour 'dateCreation'
-    public Timestamp getDateCreation() {
+    public Date getDateCreation() {
         return dateCreation;
     }
 
-    public void setDateCreation(Timestamp dateCreation) {
+    public void setDateCreation(Date dateCreation) {
         this.dateCreation = dateCreation;
     }
 
-    // Getter et Setter pour 'enfant'
-    public Enfant getEnfant() {
-        return enfant;
+
+//    // Getter et Setter pour 'dateCreation'
+//    public Timestamp getDateCreation() {
+//        return dateCreation;
+//    }
+//
+//    public void setDateCreation(Timestamp dateCreation) {
+//        this.dateCreation = dateCreation;
+//    }
+
+//    // Getter et Setter pour 'enfant'
+//    public Enfant getEnfant() {
+//        return enfant;
+//    }
+//
+//    public void setEnfant(Enfant enfant) {
+//        this.enfant = enfant;
+//    }
+
+    public Boolean getPresent() {
+        return present;
     }
 
-    public void setEnfant(Enfant enfant) {
-        this.enfant = enfant;
+    public void setPresent(Boolean present) {
+        this.present = present;
     }
 }

@@ -25,6 +25,13 @@ public class EnfantService {
     public List<Enfant> getAllEnfants() {
         return em.createQuery("SELECT e FROM Enfant e", Enfant.class).getResultList();
     }
+    
+    public List<Enfant> getEnfantsByClasse(int classeId) {
+        return em.createQuery("SELECT e FROM Enfant e WHERE e.classe.id = :classeId", Enfant.class)
+             .setParameter("classeId", classeId)
+             .getResultList();
+    }
+
 
     public void ajouterEnfant(Enfant enfant) {
         em.persist(enfant);
@@ -34,11 +41,13 @@ public class EnfantService {
         return em.merge(enfant);
     }
 
-    public void supprimerEnfant(int id) {
-        Enfant enfant = em.find(Enfant.class, id);
+    public boolean supprimerEnfant(int id) {
+        Enfant enfant = getEnfantById(id);
         if (enfant != null) {
             em.remove(enfant);
+            return true;
         }
+        return false;
     }
 
     public Enfant getEnfantById(int id) {

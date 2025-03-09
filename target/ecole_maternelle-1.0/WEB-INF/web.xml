@@ -48,6 +48,19 @@
     <listener>
         <listener-class>org.primefaces.webapp.PostConstructApplicationEventListener</listener-class>
     </listener>-->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Admin Pages</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
 
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>MyApp Realm</realm-name>
+    </login-config>
     
 </web-app>

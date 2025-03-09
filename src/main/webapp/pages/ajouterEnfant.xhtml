@@ -68,6 +68,29 @@
                     <f:convertDateTime pattern="dd/MM/yyyy"/>
                 </h:inputText>
             </div>
+            
+
+            <!-- Sélection du parent -->
+            <div class="form-group">
+                <h:outputLabel for="parent" value="Parent" class="form-label" />
+                <h:selectOneMenu id="parent" value="#{enfantBean.nouvelEnfant.parent}" styleClass="form-control">
+                    <f:selectItems value="#{enfantBean.listeParents}" var="parent" itemLabel="#{parent.nom}" itemValue="#{parent}" />
+                    <f:converter converterId="parentConverter" /> <!-- Ajout du convertisseur -->
+                </h:selectOneMenu>
+            </div>
+
+            <!-- Sélection de la classe -->
+            <div class="form-group">
+                <h:outputLabel for="classe" value="Classe" class="form-label" />
+                <h:selectOneMenu id="classe" value="#{enfantBean.nouvelEnfant.classe}" styleClass="form-control">
+                    <f:selectItems value="#{enfantBean.listeClasses}" var="classe" itemLabel="#{classe.nom}" itemValue="#{classe}" />
+                    <f:converter converterId="classeConverter" /> <!-- Ajout du convertisseur -->
+                </h:selectOneMenu>
+            </div>
+
+
+
+
 
             <!-- Boutons pour soumettre le formulaire et retour -->
             <div class="form-group button-group">

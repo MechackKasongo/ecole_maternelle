@@ -2,4 +2,14 @@
 <faces-config xmlns="https://jakarta.ee/xml/ns/jakartaee"
               version="4.0">
     <!-- Déclaration des Managed Beans si nécessaire -->
+    
+    <converter>
+        <converter-id>parentConverter</converter-id>
+        <converter-class>com.maternelle.ecole_maternelle.Converter.ParentConverter</converter-class>
+    </converter>
+
+    <converter>
+        <converter-id>classeConverter</converter-id>
+        <converter-class>com.maternelle.ecole_maternelle.Converter.ClasseConverter</converter-class>
+    </converter>
 </faces-config>

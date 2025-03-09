@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputLabel for="nom" value="Nom"/>
+            <h:inputText id="nom" value="#{enfantBean.nouvelEnfant.nom}" />
+
+            <h:outputLabel for="prenom" value="Prénom"/>
+            <h:inputText id="prenom" value="#{enfantBean.nouvelEnfant.prenom}" />
+
+            <h:outputLabel for="parent" value="Parent"/>
+            <h:selectOneMenu id="parent" value="#{enfantBean.nouvelEnfant.parent}">
+                <f:selectItems value="#{enfantBean.listeParents}" var="parent" itemValue="#{parent}" itemLabel="#{parent.nom}" />
+            </h:selectOneMenu>
+
+            <h:outputLabel for="classe" value="Classe"/>
+            <h:selectOneMenu id="classe" value="#{enfantBean.nouvelEnfant.classe}">
+                <f:selectItems value="#{enfantBean.listeClasses}" var="classe" itemValue="#{classe}" itemLabel="#{classe.nom}" />
+            </h:selectOneMenu>
+
+            <h:commandButton value="Ajouter" action="#{enfantBean.ajouterEnfant}" />
+        </h:form>
+    </h:body>
+</html>
